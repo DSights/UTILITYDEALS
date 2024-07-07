@@ -1,0 +1,47 @@
+# Always use https for secure connections
+# Replace 'www.yourwebsite.com' with your domain name
+# (as it appears on your SSL certificate)
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ https://www.utility-deals.com/$1 [L,R=301,NE] 
+
+ErrorDocument 404 https://www.utility-deals.com/404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^utility-deals.com$
+RewriteRule (.*) https://www.utility-deals.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^https://utilitydeal.co.uk [NC,OR]
+RewriteCond %{HTTP_HOST} ^https://www.utilitydeal.co.uk [NC]
+RewriteRule ^(.*)$ https://www.utility-deals.com/$1 [L,R=301,NC]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+Redirect 301 /Cheapest-Electricity-deals.html /cheapest-electricity-deals.html
+Redirect 301 /Cheapest-gas-deals.html /cheapest-gas-deals.html
+Redirect 301 /PhoneBroadband.html /phone-broadband-deals.html
+Redirect 301 /Cheapest-Chip-Pin-deals.html /cheapest-chip-pin-deals.html
+Redirect 301 /Smart-Alarm-Security.html /smart-alarm-security.html
+Redirect 301 /Cheapest-water-deals.html /cheapest-water-deals.html
+Redirect 301 /TVPackages.html /tv-packages-deals.html
+Redirect 301 /Sim-only-Deals.html /sim-only-deals.html
+Redirect 301 /B2B-Parcel-Services.html /b2b-parcel-services.html
+Redirect 301 /Business-Insurance.html /business-insurance.html
+Redirect 301 /About-us.html /about-us.html
+Redirect 301 /Privacy.html /privacy.html
+Redirect 301 /Contact.html /contact.html
+Redirect 301 /Careers.html /careers.html
+Redirect 301 /Survey.html /survey.html
+Redirect 301 /Utility-Deals-testimonial.html /utility-deals-testimonial.html
+Redirect 301 /Terms-and-Conditions.html /terms-and-conditions.html
+Redirect 301 /Blog-The-future-of-Broadband.html /blog-the-future-of-broadband.html
+Redirect 301 /Blog-Guide-to-Switching-Broadband-and-Phone-Provider.html /blog-guide-to-switching-broadband-and-phone-provider.html
+Redirect 301 /Blog-Top-UK-ISPs-By-Subscriber.html /blog-top-uk-isps-by-subscriber.html
+</IfModule>

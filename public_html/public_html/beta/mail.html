@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mail</title>
+	<style type="text/css">
+		*
+		{
+			padding: 0;
+			margin: 0;
+		}
+		.form_main {
+    width: 60%;
+    float: left;
+    padding: 30px;
+    margin: 50px 0 0 20%;
+    background: #f1f1f1;
+}
+.form_main .form_inp_full {
+    width: 100%;
+    float: left;
+}
+.form_main .form_inp_full .form_inp_1 {
+    width: 50%;
+    float: left;
+}
+.form_main .form_inp_full .form_inp_1 label {
+    width: 100%;
+    float: left;
+    margin: 0 0 5px 0;
+}
+.form_main .form_inp_full .form_inp_1 input {
+    width: 90%;
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+.form_main .form_inp_full .form_inp_1 select {
+    width: 94%;
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+.form_main .form_inp_full .form_inp_1 textarea {
+    width: 91%;
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+.form_main .form_inp_full button {
+    padding: 10px 20px;
+    background: #333;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+	</style>
+</head>
+<body>
+	<div class="form_main">
+		<form action="sendmail.php" method="post">
+			<div class="form_inp_full">
+				<div class="form_inp_1">
+					<label>Name*</label>
+					<input type="text" placeholder="Name" name="name" value="" id="name"  required>
+				</div>
+				<div class="form_inp_1">
+					<label>Email*</label>
+					<input type="email" placeholder="Email" name="email" id="email" value="" required >
+				</div>
+			</div>
+			<div class="form_inp_full">
+				<div class="form_inp_1">
+					<label>Phone*</label>
+					<input type="text" placeholder="Phone" name="phone" id="phone" value="" maxlength="10" size="10"  required>
+				</div>
+				<div class="form_inp_1">
+					<label>Date of Joining*</label>
+					<input type="date" name="doj" id="doj" value="" required>
+				</div>
+			</div>
+			<div class="form_inp_full">
+				<div class="form_inp_1">
+					<label>Address*</label>
+					<input type="text" placeholder="Address" name="address" id="address" value="" required>
+				</div>
+				<div class="form_inp_1">
+					<label>Postcode*</label>
+					<input type="text" placeholder="Postcode" name="postcode" id="postcode" value="" required>
+				</div>
+			</div>
+			<div class="form_inp_full">
+				<div class="form_inp_1">
+					<label>Reference</label>
+					<input type="text" placeholder="Reference" name="reference" id="reference" value="" >
+				</div>
+				<div class="form_inp_1">
+					<label>Current Supplier</label>
+					<select name="csupllier" id="csupllier" >
+						<option value="-">Select</option>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</div>
+			</div>
+			<div class="form_inp_full">
+				<div class="form_inp_1">
+					<label>Contract End Date</label>
+					<input type="date" name="enddate" value="" id="enddate">
+				</div>
+				<div class="form_inp_1">
+					<label>Message</label>
+					<textarea placeholder="Message" name="message" id="message"></textarea>
+				</div>
+			</div>
+			<div class="form_inp_full">
+				<button type="sunmit">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
